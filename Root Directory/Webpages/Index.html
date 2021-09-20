@@ -1,0 +1,307 @@
+<DOCTYPE! html lang="en-gb">
+<!--The goal of this document is to learn HTML and CSS code, the best practice is to build a website and go off of those trial and errors of the code, so I will be creating a website for Emma's cooking-->
+<html>
+<head>
+	<title>Welcome to Mamma Bears Bakery and Cafe</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			background-color: #787878;
+		}
+
+		.top-container {
+			background-color:#7f5387;
+			height: 45%;
+			padding: 10%;
+			text-align: center;
+			border-bottom: double;
+			border-bottom-color: #000000;
+			border-bottom-width: 20px;
+			border-top: solid;
+			border-top-color: #000000;
+			border-top-width: 6.6px;
+			font-family: Geneva, Tahoma, sans-serif;
+			font-size: 30px;
+		}
+
+		.header {
+			background: #808080;
+			color: #ffffff;
+			z-index: 5;
+		}
+
+        ul {
+            margin: auto;
+            padding: 0 10px;
+            text-align: center;
+            border-bottom: double;
+            border-bottom-color: #000000;
+            border-bottom-width: 10px;
+        }
+
+        li {
+            color: #FFF;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: uppercase;
+            display: inline-block;
+            font-size: 30px;
+            color: gold;
+            padding: 15px;
+            padding-left: 25px;
+        }
+
+		.sticky {
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<!--This is the introduction image and name of the website-->
+	<div class="top-container">
+		<h1>Welcome to Mamma Bears Bakery &amp; Cafe</h1>
+		<p>By Emma Wood</p>
+	</div>
+	<!--This is the scrolling banner with links to the other webpages-->
+	<div class="header" id="webpageLinks">
+		<div class="headerText">
+			<ul>
+				<li class="banner" link><a href="./index.html">Homepage</a></li>
+				<li class="banner" link><a href="./Place_Order.html">Place Order</a></li>
+				<li class="banner" link><a href="./Recipies.html">Recipies</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--
+		This is the Java function which enables the bar to scroll and then stick once it reaches the top, it means:
+		- When scrolling on the window activate the function "myFunction"
+		- Two variables are then made, "header" (Wchich is pulled from the HTML by the <div> id of webpageLinks.
+		- "sticky" takes that "header" variable and the value of the very top of the page (the offset property returns the top position relative to the parent element)
+		- myFunction then asks an if statement, if the window Y (up/ down) offset is greater than the sticky variable, then add the sticky class to the header 
+		  variable (Which is webpageLinks). The details of the sticky class are held in the <head><style> HTML element. Otherwise, remove the sticky class from
+		  the header variabe (the <div> with id = webpageLinks)
+	-->
+	<script>
+		window.onscroll = function () { myFunction() };
+
+		var header = document.getElementById("webpageLinks");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset > sticky) {
+				header.classList.add("sticky");
+			} else {
+				header.classList.remove("sticky");
+			}
+		}
+	</script>
+	
+
+
+
+
+
+
+
+
+	.<div id="scrollTest">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<p>text</p>
+	</div>
+</body>
+</html>
