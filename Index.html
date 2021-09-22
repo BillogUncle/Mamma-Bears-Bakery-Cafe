@@ -1,0 +1,286 @@
+﻿<DOCTYPE! html lang="en-gb">
+<!--
+    What I'm working on currently:
+    - The colours are temporary, just templates to see the <div>'s better
+    - Add details about Emma, her passion for cooking, skills and just general "about me" kinda stuff
+    - Add a footer which mentions you built this website, gotta take some credit at least right?
+    - Add little finger pointers to the 'place order' link in the scrolling bar
+-->
+
+<!--
+    The goal of this document is to learn HTML and CSS code, the best practice is to build a website 
+    and go off of those trial and errors of the code, so I will be creating a website for Emma's 
+    cooking
+ -->
+    <html>
+    <head>
+        <title>Welcome to Mamma Bears Bakery and Cafe</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: #787878;
+                overflow-x: hidden;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            .top-container {
+                background-color: #7f5387;
+                position: relative;
+                height: 100%;
+                padding: 10%;
+                text-align: center;
+                border-bottom: double;
+                border-bottom-color: #000000;
+                border-bottom-width: 20px;
+                border-top: solid;
+                border-top-color: #000000;
+                border-top-width: 6.6px;
+                font-family: Geneva, Tahoma, sans-serif;
+                font-size: 30px;
+                position: fixed;
+                z-index: 0;
+                left: 0;
+                top: 0;
+            }
+
+            .above {
+                z-index: 1;
+                top: 100%;
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+
+            .header {
+                background: rgb(249,255,0);
+                background: linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(235,0,255,1) 100%);
+                color: #ffffff;
+                z-index: 20;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                max-height: 90px;
+                border-top: solid;
+                border-top-color: black;
+                border-top-width: 10px;
+            }
+
+            ul {
+                margin: auto;
+                padding: 10px 15px;
+                text-align: center;
+                border-bottom: double;
+                border-bottom-color: #000000;
+                border-bottom-width: 10px;
+                border-top: thick;
+                border-top-color: #000000;
+                border-top-width: 5px;
+                max-height: 500px;
+            }
+
+            li {
+                color: #FFF;
+                font-family: 'Oswald', sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 30px;
+                color: gold;
+                padding: 15px;
+                padding-left: 25px;
+            }
+
+            .sticky {
+                background: rgb(249,255,0);
+                background: linear-gradient(90deg, rgba(249,255,0,1) 0%, rgba(235,0,255,1) 100%);
+                color: #ffffff;
+                z-index: 20;
+                left: 0;
+                right: 0;
+                top: 0.135%;
+                position: fixed;
+            }
+
+            #pageContent {
+                background-color: #ff05f0;
+                position: absolute;
+            }
+
+            .content_header h2 {
+                text-align: center;
+                font-family: 'Lucida Sans';
+                color: #0300fc;
+                font-size: 50px;
+                padding: 60px 60px 10px 60px;
+            }
+
+            .content_header h4 {
+                text-align: center;
+                color: #0300fc;
+                font-size: 25px;
+                padding: 2px;
+            }
+
+            .content_header p {
+                text-align: center;
+                padding: 1px 20px 7px 20px;
+                font-size: 20px;
+                color: #0300fc;
+            }
+
+            .back-to-top {
+                position:  page;
+                border: 2px solid black;
+                font-size: 15px;
+                text-align: center;
+                color: black;
+                background-color: white;
+                padding: 5px 4px;
+            }
+
+            .foot {
+                text-align: center;
+                font-size: 20px;
+                color: black;
+                background-color: #757575;
+                border-top: dashed;
+                border-top-width: 2px;
+                border-top-color: black;
+                border-bottom: dashed;
+                border-bottom-width: 2px;
+                border-bottom-color: black;
+                bottom: 0;
+            }
+
+        </style>
+    </head>                                   
+    <body>
+        <!--This is the introduction image and name of the website-->
+        <div class="top-container">
+            <h1>Welcome to Mamma Bears Bakery &amp; Cafe</h1>
+            <h3>Fresh homemade cakes and desserts</h3>
+            <p style="color: #c40000">Diets beware!</p>
+        </div>
+        <!--This is the scrolling banner with links to the other webpages-->
+        <div class="header" id="webpageLinks">
+            <div class="headerText">
+                <ul class="header">
+                    <li class="banner" link><a href="./Place_Order.html">Want to place an order?</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--
+        This is the Java function which enables the bar to scroll and then stick once it reaches the top, it means:
+        - When scrolling on the window activate the function "myFunction"
+        - Two variables are then made, "header" (Wchich is pulled from the HTML by the <div> id of webpageLinks.
+        - "sticky" takes that "header" variable and the value of the very top of the page (the offset property returns the top position relative to the parent element)
+        - myFunction then asks an if statement, if the window Y (up/ down) offset is greater than the sticky variable, then add the sticky class to the header
+          variable (Which is webpageLinks). The details of the sticky class are held in the <head><style> HTML element. Otherwise, remove the sticky class from
+          the header variabe (the <div> with id = webpageLinks)
+    -->
+        <script>
+            window.onscroll = function () { myFunction() };
+
+            var header = document.getElementById("webpageLinks");
+            var sticky = header.offsetTop * 0.875;
+
+
+            //document.getElementsByClassName("input-blue-border")[0].style.borderColor = "red"
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
+           
+
+        </script>
+
+        <div class="above" id="pageContent">
+            <div class="content_header">
+                <h2><u>HI AND WELCOME!</u></h2>
+                <h4>Thank you for visiting my website, it means a lot to me.</h4>
+                <h4>This section is about me so if that's not your thing then you can click the link above to place an order</h4>
+                <p>[About Emma]</p>
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="back-to-top">
+                <a href="#pageContent">Back to top</a>
+            </div>
+            <div class="foot">
+                <p>Hi, my name is Adam and i built this website as a start-up project to introduce myself into coding and as a means to help Emma out with starting her buisness.</p>
+                <p>This website took a lot of time to build and probably has a lot of errors and glitches i haven't noticed, if you notice any of the kind or have any suggestions please feel free to message me on GitHub></p>
+                <p><span style="color: red; font-size: 20px"><b><u>(Adam, please add details!)</u></b></span></p>
+                <p style="padding-bottom: 25px">Thank you again for visiting this website, any feedback would be appreciated :) </p>
+            </div>
+        </div>
+    </body>
+    </html>
